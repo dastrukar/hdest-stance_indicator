@@ -1,4 +1,4 @@
-nosave int hdstance_posx=60;
+nosave int hdstance_posx=75;
 nosave int hdstance_posy=-10;
 nosave int hdstance_offsetx=0;
 nosave int hdstance_offsety=0;
