@@ -1,23 +1,23 @@
 OptionMenu "HDSINFO" {
-	Title "Stance Icon Info"
+	Title "Stance Indicator Info"
 
 	StaticText "Everything is configured through CVars,", "white"
 	StaticText "because can't be bothered to make custom menu stuff.", "white"
 	StaticText " "
 	StaticText "= CVars =", "cyan"
 	StaticText "hdstance_posx, hdstance_posy", "gold"
-	StaticText "Determines the position of the stance icon.", "white"
+	StaticText "Determines the position of the stance indicator.", "white"
 	StaticText " "
 	StaticText "hdstance_scalex, hdstance_scaley", "gold"
 	StaticText "Determines the scale of", "white"
-	StaticText "the stance icon and speed indicator.", "white"
+	StaticText "the stance indicator and speed indicator.", "white"
 	StaticText " "
 	StaticText "hdstance_offsetx, hdstance_offsety", "gold"
 	StaticText "Determines the offset of the speed indicator.", "white"
 	StaticText " "
 	StaticText "hdstance_alpha", "gold"
 	StaticText "Determines the alpha transparency of", "white"
-	StaticText "the stance icon and speed indicator.", "white"
+	StaticText "the stance indicator and speed indicator.", "white"
 	StaticText " "
 	StaticText "hdstance_showspeed", "gold"
 	StaticText "If true, will display an indicator", "white"
@@ -28,5 +28,5 @@ OptionMenu "HDSINFO" {
 }
 
 AddOptionMenu "OptionsMenu" {
-	Submenu "Stance Icon Info", "HDSINFO"
+	Submenu "Stance Indicator Info", "HDSINFO"
 }
