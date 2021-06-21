@@ -1,0 +1,5 @@
+nosave int hdstance_posx=60;
+nosave int hdstance_posy=-10;
+nosave float hdstance_alpha=0.75;
+nosave float hdstance_scalex=0.35;
+nosave float hdstance_scaley=0.35;

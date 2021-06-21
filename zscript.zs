@@ -18,10 +18,10 @@ class HDStanceHandler : StaticEventHandler {
 			let n = (hdp.incapacitated)? "incap" : (c > 0.5)? "stand" : "croch";
 			StatusBar.DrawImage(
 				"hdp"..n,
-				(60, -10),
+				(hdstance_posx, hdstance_posy),
 				StatusBar.DI_SCREEN_CENTER_BOTTOM,
-				0.75, (-1, -1),
-				(0.5, 0.5)
+				hdstance_alpha, (-1, -1),
+				(hdstance_scalex, hdstance_scaley)
 			);
 		}
 	}
