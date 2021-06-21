@@ -39,6 +39,8 @@ class HDStanceHandler : StaticEventHandler {
 					mfont,
 					s, (hdstance_posx + hdstance_offsetx, hdstance_posy + hdstance_offsety),
 					StatusBar.DI_SCREEN_CENTER_BOTTOM | StatusBar.DI_TEXT_ALIGN_CENTER,
+					Font.CR_WHITE,
+					hdstance_alpha,
 					scale:(hdstance_scalex, hdstance_scaley)
 				);
 			}

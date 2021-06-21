@@ -26,3 +26,7 @@ OptionMenu "HDSINFO" {
 	StaticText "hdstance_speedtext", "gold"
 	StaticText "The string used for indicating the speed.", "white"
 }
+
+AddOptionMenu "OptionsMenu" {
+	Submenu "Stance Icon Info", "HDSINFO"
+}
