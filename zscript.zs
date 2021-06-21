@@ -23,23 +23,25 @@ class HDStanceHandler : StaticEventHandler {
 				(hdstance_scalex, hdstance_scaley)
 			);
 
-			let h = NewSmallFont.GetHeight();
-			let run = CVar.GetCVar("cl_run", StatusBar.CPlayer).GetBool();
-			let arr = "<";
-			string s;
-			if (hdp.runwalksprint > 0) {
-				s = arr..arr..arr;
-			} else if (!run || hdp.incapacitated) {
-				s = arr;
-			} else {
-				s = arr..arr;
+			if (hdstance_showspeed) {
+				let h = NewSmallFont.GetHeight();
+				let run = CVar.GetCVar("cl_run", StatusBar.CPlayer).GetBool();
+				let arr = hdstance_speedtext;
+				string s;
+				if (hdp.runwalksprint > 0) {
+					s = arr..arr..arr;
+				} else if (!run || hdp.incapacitated) {
+					s = arr;
+				} else {
+					s = arr..arr;
+				}
+				StatusBar.DrawString(
+					mfont,
+					s, (hdstance_posx + hdstance_offsetx, hdstance_posy + hdstance_offsety),
+					StatusBar.DI_SCREEN_CENTER_BOTTOM | StatusBar.DI_TEXT_ALIGN_CENTER,
+					scale:(hdstance_scalex, hdstance_scaley)
+				);
 			}
-			StatusBar.DrawString(
-				mfont,
-				s, (hdstance_posx, hdstance_posy),
-				StatusBar.DI_SCREEN_CENTER_BOTTOM | StatusBar.DI_TEXT_ALIGN_CENTER,
-				scale:(hdstance_scalex, hdstance_scaley)
-			);
 		}
 	}
 }
