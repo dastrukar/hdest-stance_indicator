@@ -1,6 +1,0 @@
-HDBIGSTANCEFONT
-{
-	0 hdpstand
-	1 hdpcroch
-	2 hdpincap
-}
