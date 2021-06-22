@@ -1,5 +1,5 @@
 nosave int hdstance_posx=75;
-nosave int hdstance_posy=-10;
+nosave int hdstance_posy=-12;
 nosave int hdstance_offsetx=0;
 nosave int hdstance_offsety=0;
 nosave float hdstance_alpha=0.75;
