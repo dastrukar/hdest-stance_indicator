@@ -8,6 +8,11 @@ Thanks to PhysixCat for the idea.
 ---
 Everything in this mod is configured through CVars,
 because I can't be bothered to make custom menu stuff.
+###
+All of this is generated from
+the readme.md provided with this addon.
+
+So you can read that instead if you want.
 
 ## CVars
 ### hdstance_posx, hdstance_posx
@@ -18,7 +23,8 @@ Determines the scale of
 the stance and speed indicator.
 
 ### hdstance_offsetx, hdstance_offsety
-Determines the offset of the speed indicator.
+Determines the offset of
+the speed and braced indicator.
 
 ### hdstance_alpha
 Determines the alpha transparency of
@@ -30,3 +36,10 @@ below the stance indicator.
 
 ### hdstance_speedtext
 The string used for indicating the speed.
+
+### hdstance_showbraced
+If true, will display a braced indicator
+below the stance indicator.
+
+### hdstance_bracedtext
+The string used for indicating if the weapon is braced.
