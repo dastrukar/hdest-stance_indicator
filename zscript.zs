@@ -13,6 +13,7 @@ class HDStanceHandler : StaticEventHandler {
 
 		HDPlayerPawn hdp = HDPlayerPawn(StatusBar.CPlayer.mo);
 		if (hdp && hdp.health > 0) {
+			int offset = 0;
 			let c = hdp.player.crouchfactor;
 			let n = (hdp.incapacitated)? "incap" : (c > 0.5)? "stand" : "croch";
 			StatusBar.DrawImage(
@@ -24,9 +25,9 @@ class HDStanceHandler : StaticEventHandler {
 			);
 
 			if (hdstance_showspeed) {
-				let h = NewSmallFont.GetHeight();
 				let run = CVar.GetCVar("cl_run", StatusBar.CPlayer).GetBool();
 				let arr = hdstance_speedtext;
+
 				string s;
 				if (hdp.runwalksprint > 0) {
 					s = arr..arr..arr;
@@ -35,9 +36,27 @@ class HDStanceHandler : StaticEventHandler {
 				} else {
 					s = arr..arr;
 				}
+
 				StatusBar.DrawString(
 					mfont,
 					s, (hdstance_posx + hdstance_offsetx, hdstance_posy + hdstance_offsety),
+					StatusBar.DI_SCREEN_CENTER_BOTTOM | StatusBar.DI_TEXT_ALIGN_CENTER,
+					Font.CR_WHITE,
+					hdstance_alpha,
+					scale:(hdstance_scalex, hdstance_scaley)
+				);
+
+				offset += NewSmallFont.GetHeight() * hdstance_scaley;
+			}
+
+			// Show if weapon is braced
+			if (hdstance_showbraced) {
+				string s;
+				s = (hdp.gunbraced)? hdstance_bracedtext : "";
+
+				StatusBar.DrawString(
+					mfont,
+					s, (hdstance_posx + hdstance_offsetx, hdstance_posy + hdstance_offsety + offset),
 					StatusBar.DI_SCREEN_CENTER_BOTTOM | StatusBar.DI_TEXT_ALIGN_CENTER,
 					Font.CR_WHITE,
 					hdstance_alpha,

@@ -7,3 +7,5 @@ nosave float hdstance_scalex=0.35;
 nosave float hdstance_scaley=0.35;
 nosave bool hdstance_showspeed=true;
 nosave string hdstance_speedtext="<";
+nosave bool hdstance_showbraced=true;
+nosave string hdstance_bracedtext="===";
