@@ -3,6 +3,8 @@ A simple clientside addon for HDest that adds a "stance indicator" *(like the on
 
 Thanks to PhysixCat for the idea.
 
+![](https://cdn.discordapp.com/attachments/713246305392001055/856878292706525204/unknown.png)
+
 ---
 Everything in this mod is configured through CVars,
 because I can't be bothered to make custom menu stuff.
