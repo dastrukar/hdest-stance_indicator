@@ -1,5 +1,5 @@
 # HDest Stance Indicator
-A simple addon for HDest that adds a "stance indicator" *(like the one you'd see in ARMA)*.
+A simple clientside addon for HDest that adds a "stance indicator" *(like the one you'd see in ARMA)*.
 
 Thanks to PhysixCat for the idea.
 
