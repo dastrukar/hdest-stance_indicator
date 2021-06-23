@@ -19,10 +19,10 @@ nosave string hdstance_bracedtext="===";
 
 
 nosave bool hdstance_drawshadowbox=true;
-nosave int hdstance_boxsizex=1;
-nosave int hdstance_boxsizey=1;
-nosave int hdstance_boxoffsetx=0;
-nosave int hdstance_boxoffsety=0;
+nosave int hdstance_boxsizex=70;
+nosave int hdstance_boxsizey=100;
+nosave int hdstance_boxoffsetx=1;
+nosave int hdstance_boxoffsety=12;
 
 
 nosave int hdstance_screenflags=241;
