@@ -1,13 +1,28 @@
 nosave int hdstance_posx=75;
 nosave int hdstance_posy=-12;
+
 nosave int hdstance_offsetx=0;
 nosave int hdstance_offsety=0;
+
 nosave float hdstance_alpha=0.75;
+
 nosave float hdstance_scalex=0.35;
 nosave float hdstance_scaley=0.35;
+
+
 nosave bool hdstance_showspeed=true;
 nosave string hdstance_speedtext="<";
+
+
 nosave bool hdstance_showbraced=true;
 nosave string hdstance_bracedtext="===";
+
+
 nosave bool hdstance_drawshadowbox=true;
+nosave int hdstance_boxsizex=1;
+nosave int hdstance_boxsizey=1;
+nosave int hdstance_boxoffsetx=0;
+nosave int hdstance_boxoffsety=0;
+
+
 nosave int hdstance_screenflags=241;

@@ -68,11 +68,11 @@ class HDStanceHandler : StaticEventHandler {
 		if (hdstance_drawshadowbox) {
 			let box_offset = NewSmallFont.GetHeight() * hdstance_scaley * 2;
 			StatusBar.DrawImage(
-				"hdp".."box",
-				(hdstance_posx, hdstance_posy + box_offset),
+				"hdpboxa",
+				(hdstance_posx + hdstance_boxoffsetx, hdstance_posy + hdstance_boxoffsety),
 				s_flags,
 				hdstance_alpha * 0.5, (-1, -1),
-				(hdstance_scalex, hdstance_scaley)
+				(hdstance_boxsizex * hdstance_scalex, hdstance_boxsizey * hdstance_scaley)
 			);
 		}
 
@@ -90,6 +90,7 @@ class HDStanceHandler : StaticEventHandler {
 				(hdstance_scalex, hdstance_scaley)
 			);
 
+			// Show speed indicator
 			if (hdstance_showspeed) {
 				let run = CVar.GetCVar("cl_run", StatusBar.CPlayer).GetBool();
 				let arr = hdstance_speedtext;
