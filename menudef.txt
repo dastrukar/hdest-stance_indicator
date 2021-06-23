@@ -1,5 +1,9 @@
 OptionMenu "HDSINFO" {
-	Title "Stance Indicator Info"	StaticText "Everything in this mod is configured through CVars,", "white"
+	Title "Stance Indicator Info"
+
+	SafeCommand "Reset all CVars to default", "hdstance_resetallcvars"
+
+	StaticText "Everything in this mod is configured through CVars,", "white"
 	StaticText "because I can't be bothered to make custom menu stuff.", "white"
 	StaticText " ", "white"
 	StaticText "All of this is generated from", "white"
@@ -48,6 +52,8 @@ OptionMenu "HDSINFO" {
 	StaticText "Determines the offset of the shadow box.", "white"
 	StaticText " ", "white"
 	StaticText "hdstance_screenflags XYZ", "gold"
+	StaticText "Determines what position flags will be used.", "white"
+	StaticText " ", "white"
 	StaticText "Syntax:", "white"
 	StaticText "- X -", "white"
 	StaticText "1: NONE", "white"

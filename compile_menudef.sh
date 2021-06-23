@@ -13,7 +13,9 @@ blank='	StaticText " ", "white"\n'
 
 result=""
 result+='OptionMenu "HDSINFO" {\n'
-result+='	Title "Stance Indicator Info"'
+result+='	Title "Stance Indicator Info"\n\n'
+result+='	SafeCommand "Reset all CVars to default", "hdstance_resetallcvars"\n\n'
+result+=${blank}
 
 echo "Compiling menudef.txt..."
 # Read the contents of readme.md
@@ -43,9 +45,6 @@ do
 		result+=${h2_start}
 		result+=${s:3}
 		result+=${h2_end}
-	elif [[ ${heading} == '/  ' ]]
-	then
-		result+=${blank}
 	elif [[ ${heading} == '```' ]]
 	then
 		continue

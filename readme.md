@@ -8,8 +8,7 @@ Thanks to PhysixCat for the idea.
 ---
 Everything in this mod is configured through CVars,
 because I can't be bothered to make custom menu stuff.
-/  
-
+ 
 All of this is generated from
 the readme.md provided with this addon.
 
@@ -56,6 +55,8 @@ Determines the size of the shadow box.
 Determines the offset of the shadow box.
 
 ### hdstance_screenflags XYZ
+Determines what position flags will be used.
+ 
 Syntax:
 ```
 - X -
