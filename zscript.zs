@@ -11,11 +11,24 @@ class HDStanceHandler : StaticEventHandler {
 		StatusBar.FullScreenOffsets = true;
 		mfont = HUDFont.Create(NewSmallFont);
 
+		if (hdstance_drawshadowbox) {
+			let box_offset = NewSmallFont.GetHeight() * hdstance_scaley * 2;
+			StatusBar.DrawImage(
+				"hdp".."box",
+				(hdstance_posx, hdstance_posy + box_offset),
+				StatusBar.DI_SCREEN_CENTER_BOTTOM,
+				hdstance_alpha * 0.5, (-1, -1),
+				(hdstance_scalex, hdstance_scaley)
+			);
+		}
+
 		HDPlayerPawn hdp = HDPlayerPawn(StatusBar.CPlayer.mo);
 		if (hdp && hdp.health > 0) {
 			int offset = 0;
 			let c = hdp.player.crouchfactor;
 			let n = (hdp.incapacitated)? "incap" : (c > 0.5)? "stand" : "croch";
+
+
 			StatusBar.DrawImage(
 				"hdp"..n,
 				(hdstance_posx, hdstance_posy),

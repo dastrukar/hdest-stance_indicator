@@ -9,3 +9,4 @@ nosave bool hdstance_showspeed=true;
 nosave string hdstance_speedtext="<";
 nosave bool hdstance_showbraced=true;
 nosave string hdstance_bracedtext="===";
+nosave bool hdstance_drawshadowbox=true;
