@@ -70,7 +70,7 @@ class HDStanceHandler : StaticEventHandler {
 			StatusBar.DrawImage(
 				"hdp".."box",
 				(hdstance_posx, hdstance_posy + box_offset),
-				StatusBar.DI_SCREEN_CENTER_BOTTOM,
+				s_flags,
 				hdstance_alpha * 0.5, (-1, -1),
 				(hdstance_scalex, hdstance_scaley)
 			);
