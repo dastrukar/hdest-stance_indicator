@@ -43,6 +43,9 @@ do
 		result+=${h2_start}
 		result+=${s:3}
 		result+=${h2_end}
+	elif [[ ${heading} == '/  ' ]]
+	then
+		result+=${blank}
 	elif [[ ${heading} == '```' ]]
 	then
 		continue
