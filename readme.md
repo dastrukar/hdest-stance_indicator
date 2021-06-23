@@ -8,7 +8,7 @@ Thanks to PhysixCat for the idea.
 ---
 Everything in this mod is configured through CVars,
 because I can't be bothered to make custom menu stuff.
-/
+/  
 All of this is generated from
 the readme.md provided with this addon.
 
@@ -20,7 +20,7 @@ Determines the position of the stance indicator.
 
 ### hdstance_scalex, hdstance_scaley
 Determines the scale of
-the stance and speed indicator.
+the indicators enabled and the box shadow.
 
 ### hdstance_offsetx, hdstance_offsety
 Determines the offset of
@@ -47,6 +47,12 @@ The string used for indicating if the weapon is braced.
 ### hdstance_drawshadowbox
 If true, will display a shadow box
 behind the stance indicator.
+
+### hdstance_boxsizex, hdstance_boxsizey
+Determines the size of the shadow box.
+
+### hdstance_boxoffsetx, hdstance_boxoffsety
+Determines the offset of the shadow box.
 
 ### hdstance_screenflags XYZ
 Syntax:
