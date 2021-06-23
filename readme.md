@@ -8,7 +8,7 @@ Thanks to PhysixCat for the idea.
 ---
 Everything in this mod is configured through CVars,
 because I can't be bothered to make custom menu stuff.
-###
+/
 All of this is generated from
 the readme.md provided with this addon.
 
@@ -43,3 +43,25 @@ below the stance indicator.
 
 ### hdstance_bracedtext
 The string used for indicating if the weapon is braced.
+
+### hdstance_drawshadowbox
+If true, will display a shadow box
+behind the stance indicator.
+
+### hdstance_screenflags XYZ
+Syntax:
+```
+- X -
+1: NONE
+2: BOTTOM
+3: TOP
+- Y -
+1: NONE
+2: CENTER
+3: VCENTER
+4: HCENTER
+- Z -
+1: NONE
+2: LEFT
+3: RIGHT
+```
