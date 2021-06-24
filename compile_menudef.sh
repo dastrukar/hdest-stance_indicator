@@ -3,6 +3,7 @@
 # Put some handy variables
 IFS=$'\n'
 start=0
+dontspace=0
 
 text_start='	StaticText "'
 text_end='", "white"\n'
@@ -35,16 +36,22 @@ do
 	heading=${s:0:3}
 	if [[ ${heading} == "###" ]]
 	then
-		result+=${blank}
+		if [[ ${dontspace} == "0" ]]
+		then
+			result+=${blank}
+		fi
+
 		result+=${text_start}
 		result+=${s:4}
 		result+=${h3_end}
+		dontspace=1
 	elif [[ ${heading} == "## " ]]
 	then
 		result+=${blank}
 		result+=${h2_start}
 		result+=${s:3}
 		result+=${h2_end}
+		dontspace=0
 	elif [[ ${heading} == '```' ]]
 	then
 		continue
@@ -52,6 +59,7 @@ do
 		result+=${text_start}
 		result+=${s}
 		result+=${text_end}
+		dontspace=0
 	fi
 done
 
