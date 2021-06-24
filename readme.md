@@ -60,6 +60,7 @@ Determines the offset of
 the braced indicator.
 (ignored if hdstance_auto is true)
 
+### [string]
 ### hdstance_bracedtext
 The string used for indicating if the weapon is braced.
 

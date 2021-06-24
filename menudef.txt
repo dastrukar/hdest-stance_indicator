@@ -58,6 +58,7 @@ OptionMenu "HDSINFO" {
 	StaticText "the braced indicator.", "white"
 	StaticText "(ignored if hdstance_auto is true)", "white"
 	StaticText " ", "white"
+	StaticText "[string]", "gold"
 	StaticText "hdstance_bracedtext", "gold"
 	StaticText "The string used for indicating if the weapon is braced.", "white"
 	StaticText " ", "white"
