@@ -15,28 +15,40 @@ the readme.md provided with this addon.
 So you can read that instead if you want.
 
 ## CVars
+### [bool]
+### hdstance_auto
+If true, will automatically position
+speed and braced indicator.
+
+### [int]
 ### hdstance_posx, hdstance_posx
 Determines the position of the stance indicator.
 
+### [int]
 ### hdstance_scalex, hdstance_scaley
 Determines the scale of
 the indicators enabled and the box shadow.
 
+### [int]
 ### hdstance_offsetx, hdstance_offsety
 Determines the offset of
 the speed and braced indicator.
 
+### [float]
 ### hdstance_alpha
 Determines the alpha transparency of
 the stance and speed indicator.
 
+### [bool]
 ### hdstance_showspeed
 If true, will display a speed indicator
 below the stance indicator.
 
+### [string]
 ### hdstance_speedtext
 The string used for indicating the speed.
 
+### [bool]
 ### hdstance_showbraced
 If true, will display a braced indicator
 below the stance indicator.
@@ -44,16 +56,20 @@ below the stance indicator.
 ### hdstance_bracedtext
 The string used for indicating if the weapon is braced.
 
+### [bool]
 ### hdstance_drawshadowbox
 If true, will display a shadow box
 behind the stance indicator.
 
+### [int]
 ### hdstance_boxsizex, hdstance_boxsizey
 Determines the size of the shadow box.
 
+### [int]
 ### hdstance_boxoffsetx, hdstance_boxoffsety
 Determines the offset of the shadow box.
 
+### [int]
 ### hdstance_screenflags XYZ
 Determines what position flags will be used.
  
