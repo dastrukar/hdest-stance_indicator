@@ -78,10 +78,10 @@ class HDStanceHandler : StaticEventHandler {
 
 		HDPlayerPawn hdp = HDPlayerPawn(StatusBar.CPlayer.mo);
 		if (hdp && hdp.health > 0) {
-			int offset = 0;
 			let c = hdp.player.crouchfactor;
 			let n = (hdp.incapacitated)? "incap" : (c > 0.5)? "stand" : "croch";
 
+			// Show stance
 			StatusBar.DrawImage(
 				"hdp"..n,
 				(hdstance_posx, hdstance_posy),
@@ -106,14 +106,12 @@ class HDStanceHandler : StaticEventHandler {
 
 				StatusBar.DrawString(
 					mfont,
-					s, (hdstance_posx + hdstance_offsetx, hdstance_posy + hdstance_offsety),
+					s, (hdstance_posx + hdstance_speedoffsetx, hdstance_posy + hdstance_speedoffsety),
 					s_flags | StatusBar.DI_TEXT_ALIGN_CENTER,
 					Font.CR_WHITE,
 					hdstance_alpha,
 					scale:(hdstance_scalex, hdstance_scaley)
 				);
-
-				offset += NewSmallFont.GetHeight() * hdstance_scaley;
 			}
 
 			// Show if weapon is braced
@@ -123,7 +121,7 @@ class HDStanceHandler : StaticEventHandler {
 
 				StatusBar.DrawString(
 					mfont,
-					s, (hdstance_posx + hdstance_offsetx, hdstance_posy + hdstance_offsety + offset),
+					s, (hdstance_posx + hdstance_bracedoffsetx, hdstance_posy + hdstance_bracedoffsety),
 					s_flags | StatusBar.DI_TEXT_ALIGN_CENTER,
 					Font.CR_WHITE,
 					hdstance_alpha,
