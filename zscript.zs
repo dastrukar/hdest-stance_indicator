@@ -66,10 +66,10 @@ class HDStanceHandler : StaticEventHandler {
 		int s_flags = GetScreenFlags();
 
 		if (hdstance_drawshadowbox) {
-			let box_offset = NewSmallFont.GetHeight() * hdstance_scaley * 2;
+			Vector2 box_offset = (hdstance_boxoffsetx * hdstance_scalex, hdstance_boxoffsety * hdstance_scaley);
 			StatusBar.DrawImage(
 				"hdpboxa",
-				(hdstance_posx + hdstance_boxoffsetx, hdstance_posy + hdstance_boxoffsety),
+				(hdstance_posx + box_offset.x, hdstance_posy + box_offset.y),
 				s_flags,
 				hdstance_alpha * 0.5, (-1, -1),
 				(hdstance_boxsizex * hdstance_scalex, hdstance_boxsizey * hdstance_scaley)
@@ -78,6 +78,7 @@ class HDStanceHandler : StaticEventHandler {
 
 		HDPlayerPawn hdp = HDPlayerPawn(StatusBar.CPlayer.mo);
 		if (hdp && hdp.health > 0) {
+			Vector2 offset = (0, 0);
 			let c = hdp.player.crouchfactor;
 			let n = (hdp.incapacitated)? "incap" : (c > 0.5)? "stand" : "croch";
 
@@ -104,9 +105,15 @@ class HDStanceHandler : StaticEventHandler {
 					s = arr..arr;
 				}
 
+				if (hdstance_auto) {
+					offset = (0, 0);
+				} else {
+					offset = (hdstance_speedoffsetx * hdstance_scalex, hdstance_speedoffsety * hdstance_scaley);
+				}
+
 				StatusBar.DrawString(
 					mfont,
-					s, (hdstance_posx + hdstance_speedoffsetx, hdstance_posy + hdstance_speedoffsety),
+					s, (hdstance_posx + offset.x, hdstance_posy + offset.y),
 					s_flags | StatusBar.DI_TEXT_ALIGN_CENTER,
 					Font.CR_WHITE,
 					hdstance_alpha,
@@ -119,9 +126,15 @@ class HDStanceHandler : StaticEventHandler {
 				string s;
 				s = (hdp.gunbraced)? hdstance_bracedtext : "";
 
+				if (hdstance_auto) {
+					offset = (0, NewSmallFont.GetHeight() * hdstance_scaley);
+				} else {
+					offset = (hdstance_bracedoffsetx * hdstance_scalex, hdstance_bracedoffsety * hdstance_scaley);
+				}
+
 				StatusBar.DrawString(
 					mfont,
-					s, (hdstance_posx + hdstance_bracedoffsetx, hdstance_posy + hdstance_bracedoffsety),
+					s, (hdstance_posx + offset.x, hdstance_posy + offset.y),
 					s_flags | StatusBar.DI_TEXT_ALIGN_CENTER,
 					Font.CR_WHITE,
 					hdstance_alpha,
