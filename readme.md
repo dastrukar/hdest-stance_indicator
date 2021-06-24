@@ -29,11 +29,6 @@ Determines the position of the stance indicator.
 Determines the scale of
 the indicators enabled and the box shadow.
 
-### [int]
-### hdstance_offsetx, hdstance_offsety
-Determines the offset of
-the speed and braced indicator.
-
 ### [float]
 ### hdstance_alpha
 Determines the alpha transparency of
@@ -44,6 +39,12 @@ the stance and speed indicator.
 If true, will display a speed indicator
 below the stance indicator.
 
+### [int]
+### hdstance_speedoffsetx, hdstance_speedoffsety
+Determines the offset of
+the speed indicator.
+(ignored if hdstance_auto is true)
+
 ### [string]
 ### hdstance_speedtext
 The string used for indicating the speed.
@@ -52,6 +53,12 @@ The string used for indicating the speed.
 ### hdstance_showbraced
 If true, will display a braced indicator
 below the stance indicator.
+
+### [int]
+### hdstance_bracedoffsetx, hdstance_bracedoffsety 
+Determines the offset of
+the braced indicator.
+(ignored if hdstance_auto is true)
 
 ### hdstance_bracedtext
 The string used for indicating if the weapon is braced.
