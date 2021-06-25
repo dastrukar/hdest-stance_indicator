@@ -213,7 +213,12 @@ class HDStanceHandler : StaticEventHandler {
 				string s = (hdp.gunbraced)? hdstance_bracedtext : "";
 
 				if (hdstance_auto) {
-					offset = (0, NewSmallFont.GetHeight() * hdstance_scaley);
+					int tmp_y = 0;
+					if (hdstance_showspeed) {
+						tmp_y = NewSmallFont.GetHeight() * hdstance_scaley;
+					}
+
+					offset = (0, tmp_y);
 				} else {
 					offset = (hdstance_bracedoffsetx * hdstance_scalex, hdstance_bracedoffsety * hdstance_scaley);
 				}
