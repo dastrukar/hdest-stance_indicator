@@ -24,6 +24,6 @@ nosave bool hdstance_drawshadowbox=true;
 nosave int hdstance_boxsizex=70;
 nosave int hdstance_boxsizey=100;
 nosave int hdstance_boxoffsetx=1;
-nosave int hdstance_boxoffsety=12;
+nosave int hdstance_boxoffsety=34;
 
 nosave int hdstance_screenflags=241;
