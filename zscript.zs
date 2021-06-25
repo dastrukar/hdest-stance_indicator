@@ -55,6 +55,92 @@ class HDStanceHandler : StaticEventHandler {
 		return flags;
 	}
 
+	ui int, bool GetTextFlags(int s) {
+		// Speed text flags
+		// Syntax: XY
+		int flags;
+		bool vertical_mode = false;
+
+		// - Y -
+		// 1: LEFT
+		// 2: CENTER
+		// 3: RIGHT
+		//
+		// (if X = VERTICAL)
+		// 1: TOP
+		// 2: CENTER
+		// 3: BOTTOM
+		if (CompareLastDigit(s, 1)) {
+			flags |= StatusBar.DI_TEXT_ALIGN_LEFT;
+		} else if (CompareLastDigit(s, 2)) {
+			flags |= StatusBar.DI_TEXT_ALIGN_CENTER;
+		} else if (CompareLastDigit(s, 3)) {
+			flags |= StatusBar.DI_TEXT_ALIGN_RIGHT;
+		}
+
+		s *= 0.1;
+
+		// - X -
+		// 1: HORIZONTAL
+		// 2: VERTICAL
+		if (CompareLastDigit(s, 2)) {
+			vertical_mode = true;
+		}
+
+		return flags, vertical_mode;
+	}
+
+	ui void DrawIndicator(
+		string text,
+		Vector2 offset,
+		bool vertical,
+		int repeat,
+		int flags
+	) {
+		// If vertical, repeat the given string X times
+		if (vertical) {
+			int vertical_offset = 0;
+			int center_offset = 0;
+			if (flags | StatusBar.DI_TEXT_ALIGN_CENTER) {
+				for (int i = 0; i < repeat - 1; i++) {
+					center_offset -= (NewSmallFont.GetHeight() / 2) * hdstance_scaley;
+				}
+			}
+
+			for (int i = 0; i < repeat; i++) {
+				StatusBar.DrawString(
+					mfont,
+					text, (hdstance_posx + offset.x, hdstance_posy + offset.y + vertical_offset + center_offset),
+					flags,
+					Font.CR_WHITE,
+					hdstance_alpha,
+					scale:(hdstance_scalex, hdstance_scaley)
+				);
+
+				// Go up or down, or center?
+				if (flags | StatusBar.DI_TEXT_ALIGN_RIGHT) {
+					vertical_offset += NewSmallFont.GetHeight() * hdstance_scaley;
+				} else {
+					vertical_offset -= NewSmallFont.GetHeight() * hdstance_scaley;
+				}
+			}
+		} else {
+			string s = "";
+			for (int i = 0; i < repeat; i++) {
+				s = s..text;
+			}
+
+			StatusBar.DrawString(
+				mfont,
+				s, (hdstance_posx + offset.x, hdstance_posy + offset.y),
+				flags,
+				Font.CR_WHITE,
+				hdstance_alpha,
+				scale:(hdstance_scalex, hdstance_scaley)
+			);
+		}
+	}
+
 	override void RenderUnderlay(RenderEvent e) {
 		if (AutomapActive || GameState != GS_LEVEL) {
 			return;
@@ -93,17 +179,12 @@ class HDStanceHandler : StaticEventHandler {
 
 			// Show speed indicator
 			if (hdstance_showspeed) {
+				int sp_flags;
+				bool v_mode;
+				[sp_flags, v_mode] = GetTextFlags(hdstance_speedtextalign);
+
 				let run = CVar.GetCVar("cl_run", StatusBar.CPlayer).GetBool();
 				let arr = hdstance_speedtext;
-
-				string s;
-				if (hdp.runwalksprint > 0) {
-					s = arr..arr..arr;
-				} else if (!run || hdp.incapacitated) {
-					s = arr;
-				} else {
-					s = arr..arr;
-				}
 
 				if (hdstance_auto) {
 					offset = (0, 0);
@@ -111,20 +192,25 @@ class HDStanceHandler : StaticEventHandler {
 					offset = (hdstance_speedoffsetx * hdstance_scalex, hdstance_speedoffsety * hdstance_scaley);
 				}
 
-				StatusBar.DrawString(
-					mfont,
-					s, (hdstance_posx + offset.x, hdstance_posy + offset.y),
-					s_flags | StatusBar.DI_TEXT_ALIGN_CENTER,
-					Font.CR_WHITE,
-					hdstance_alpha,
-					scale:(hdstance_scalex, hdstance_scaley)
-				);
+				int r;
+				if (hdp.runwalksprint > 0) {
+					r = 3;
+				} else if (!run || hdp.incapacitated) {
+					r = 1;
+				} else {
+					r = 2;
+				}
+
+				DrawIndicator(arr, offset, v_mode, r, s_flags | sp_flags);
 			}
 
 			// Show if weapon is braced
 			if (hdstance_showbraced) {
-				string s;
-				s = (hdp.gunbraced)? hdstance_bracedtext : "";
+				int b_flags;
+				bool v_mode;
+				[b_flags, v_mode] = GetTextFlags(hdstance_bracedtextalign);
+
+				string s = (hdp.gunbraced)? hdstance_bracedtext : "";
 
 				if (hdstance_auto) {
 					offset = (0, NewSmallFont.GetHeight() * hdstance_scaley);
@@ -132,14 +218,7 @@ class HDStanceHandler : StaticEventHandler {
 					offset = (hdstance_bracedoffsetx * hdstance_scalex, hdstance_bracedoffsety * hdstance_scaley);
 				}
 
-				StatusBar.DrawString(
-					mfont,
-					s, (hdstance_posx + offset.x, hdstance_posy + offset.y),
-					s_flags | StatusBar.DI_TEXT_ALIGN_CENTER,
-					Font.CR_WHITE,
-					hdstance_alpha,
-					scale:(hdstance_scalex, hdstance_scaley)
-				);
+				DrawIndicator(s, offset, v_mode, 3, s_flags | b_flags);
 			}
 		}
 	}

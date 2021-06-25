@@ -78,10 +78,10 @@ Determines the size of the shadow box.
 Determines the offset of the shadow box.
 
 ### [int]
-### hdstance_screenflags XYZ
+### hdstance_screenflags
 Determines what position flags will be used.
  
-Syntax:
+Syntax: XYZ
 ```
 - X -
 1: NONE
@@ -96,4 +96,24 @@ Syntax:
 1: NONE
 2: LEFT
 3: RIGHT
+```
+
+### [int]
+### hdstance_speedtextalign, hdstance_bracedtextalign
+Determines how the text will be aligned.
+
+Syntax: XY
+```
+- X -
+1: HORIZONTAL
+2: VERTICAL
+- Y -
+1: LEFT
+2: CENTER
+3: RIGHT
+
+(if X = VERTICAL)
+1: TOP
+2: CENTER
+3: BOTTOM
 ```
