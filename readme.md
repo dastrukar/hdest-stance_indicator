@@ -14,15 +14,14 @@ the readme.md provided with this addon.
 
 So you can read that instead if you want.
 
-## CVars
+## ====CVars====
+
+## RENDERING
+
 ### [bool]
 ### hdstance_auto
 If true, will automatically position
 speed and braced indicator.
-
-### [int]
-### hdstance_posx, hdstance_posx
-Determines the position of the stance indicator.
 
 ### [int]
 ### hdstance_scalex, hdstance_scaley
@@ -39,30 +38,10 @@ the stance and speed indicator.
 If true, will display a speed indicator
 below the stance indicator.
 
-### [int]
-### hdstance_speedoffsetx, hdstance_speedoffsety
-Determines the offset of
-the speed indicator.
-(ignored if hdstance_auto is true)
-
-### [string]
-### hdstance_speedtext
-The string used for indicating the speed.
-
 ### [bool]
 ### hdstance_showbraced
 If true, will display a braced indicator
 below the stance indicator.
-
-### [int]
-### hdstance_bracedoffsetx, hdstance_bracedoffsety 
-Determines the offset of
-the braced indicator.
-(ignored if hdstance_auto is true)
-
-### [string]
-### hdstance_bracedtext
-The string used for indicating if the weapon is braced.
 
 ### [bool]
 ### hdstance_drawshadowbox
@@ -73,9 +52,42 @@ behind the stance indicator.
 ### hdstance_boxsizex, hdstance_boxsizey
 Determines the size of the shadow box.
 
+
+## POSITIONING
+
+### [int]
+### hdstance_posx, hdstance_posx
+Determines the position of the stance indicator.
+
+### [int]
+### hdstance_speedoffsetx, hdstance_speedoffsety
+Determines the offset of
+the speed indicator.
+(ignored if hdstance_auto is true)
+
+### [int]
+### hdstance_bracedoffsetx, hdstance_bracedoffsety 
+Determines the offset of
+the braced indicator.
+(ignored if hdstance_auto is true)
+
 ### [int]
 ### hdstance_boxoffsetx, hdstance_boxoffsety
 Determines the offset of the shadow box.
+
+
+## INDICATOR TEXT
+
+### [string]
+### hdstance_speedtext
+The string used for indicating the speed.
+
+### [string]
+### hdstance_bracedtext
+The string used for indicating if the weapon is braced.
+
+
+## FLAGS
 
 ### [int]
 ### hdstance_screenflags
