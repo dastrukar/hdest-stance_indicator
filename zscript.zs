@@ -161,6 +161,17 @@ class HDStanceHandler : StaticEventHandler {
 				(hdstance_boxsizex * hdstance_scalex, hdstance_boxsizey * hdstance_scaley)
 			);
 		}
+	}
+
+	override void RenderOverlay(RenderEvent e) {
+		if (AutomapActive || GameState != GS_LEVEL) {
+			return;
+		}
+
+		StatusBar.FullScreenOffsets = true;
+		mfont = HUDFont.Create(NewSmallFont);
+
+		int s_flags = GetScreenFlags();
 
 		HDPlayerPawn hdp = HDPlayerPawn(StatusBar.CPlayer.mo);
 		if (hdp && hdp.health > 0) {
