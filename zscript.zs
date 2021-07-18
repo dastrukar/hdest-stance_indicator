@@ -157,7 +157,7 @@ class HDStanceHandler : StaticEventHandler {
 				"hdpboxa",
 				(hdstance_posx + box_offset.x, hdstance_posy + box_offset.y),
 				s_flags,
-				hdstance_alpha * 0.5, (-1, -1),
+				hdstance_boxalpha, (-1, -1),
 				(hdstance_boxsizex * hdstance_scalex, hdstance_boxsizey * hdstance_scaley)
 			);
 		}

@@ -48,6 +48,11 @@ below the stance indicator.
 If true, will display a shadow box
 behind the stance indicator.
 
+### [float]
+### hdstance_boxalpha
+Determines the alpha transparency of
+the shadow box.
+
 ### [int]
 ### hdstance_boxsizex, hdstance_boxsizey
 Determines the size of the shadow box.
