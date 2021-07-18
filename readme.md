@@ -86,6 +86,11 @@ The string used for indicating the speed.
 ### hdstance_bracedtext
 The string used for indicating if the weapon is braced.
 
+### [int]
+### hdstance_bracedtextrepeat
+Determines how much hdstance_bracedtext
+will be repeated when displayed.
+
 
 ## FLAGS
 
