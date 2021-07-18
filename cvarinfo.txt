@@ -16,6 +16,7 @@ nosave int hdstance_speedtextalign=12;
 
 nosave bool hdstance_showbraced=true;
 nosave string hdstance_bracedtext="=";
+nosave int hdstance_bracedtextrepeat=3;
 nosave int hdstance_bracedoffsetx=0;
 nosave int hdstance_bracedoffsety=6;
 nosave int hdstance_bracedtextalign=12;

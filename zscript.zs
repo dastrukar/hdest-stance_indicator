@@ -234,7 +234,7 @@ class HDStanceHandler : StaticEventHandler {
 					offset = (hdstance_bracedoffsetx * hdstance_scalex, hdstance_bracedoffsety * hdstance_scaley);
 				}
 
-				DrawIndicator(s, offset, v_mode, 3, s_flags | b_flags);
+				DrawIndicator(s, offset, v_mode, hdstance_bracedtextrepeat, s_flags | b_flags);
 			}
 		}
 	}
