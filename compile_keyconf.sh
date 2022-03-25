@@ -13,10 +13,17 @@ for s in $(cat cvarinfo.txt)
 do
 	IFS=' ='$'\n'
 	count=""
+	pass="n"
 
 	# Get words in current line
 	for w in ${s}
 	do
+		# Ignore comments
+		if [[ ${w:0:2} == "//" ]]
+		then
+			break
+		fi
+
 		# Add the third word (which is the cvar name)
 		if [[ ${count} == "xx" ]]
 		then

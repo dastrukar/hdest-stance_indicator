@@ -1,7 +1,7 @@
 # HDest Stance Indicator
 A simple clientside addon for HDest that adds a "stance indicator" *(like the one you'd see in ARMA)*.
 
-Thanks to PhysixCat for the idea.
+Thanks to PhysixCat for the idea, and FDA for making the player skin edit of Stance Indicator.
 
 ![](https://cdn.discordapp.com/attachments/713246305392001055/856878292706525204/unknown.png)
 
@@ -56,6 +56,32 @@ the shadow box.
 ### [int]
 ### hdstance_boxsizex, hdstance_boxsizey
 Determines the size of the shadow box.
+
+### [bool]
+### hdstance_skinned
+If true, the stance icon will use the player's skin.
+
+### [bool]
+### hdstance_animate
+(REQUIRES hdstance_skinned TO BE TRUE)
+If true, the stance icon will follow the player's actions.
+
+### [int]
+### hdstance_angle
+(REQUIRES hdstance_skinned TO BE TRUE)
+Sets the player's stance angle to face.
+Valid values are 1-8.
+
+### [bool]
+### hdstance_speen
+(REQUIRES hdstance_skinned TO BE TRUE)
+SPEEN
+
+### [bool]
+### hdstance_speenrate
+(REQUIRES hdstance_skinned TO BE TRUE)
+Determines how fast the player's stance will speen.
+(the lower the value, the faster it'll speen)
 
 
 ## POSITIONING

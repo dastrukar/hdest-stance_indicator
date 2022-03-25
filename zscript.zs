@@ -1,7 +1,10 @@
 version 4.6.0
 
+
 class HDStanceHandler : StaticEventHandler {
 	ui HUDFont mfont;
+	ui int speenAngle;
+	ui int speenCount;
 
 	ui bool CompareLastDigit(int num, int expected) {
 		return ((num % 10) == expected);
@@ -176,14 +179,54 @@ class HDStanceHandler : StaticEventHandler {
 		HDPlayerPawn hdp = HDPlayerPawn(StatusBar.CPlayer.mo);
 		if (hdp && hdp.health > 0) {
 			Vector2 offset = (0, 0);
-			let c = hdp.player.crouchfactor;
-			let n = (hdp.incapacitated)? "incap" : (c > 0.5)? "stand" : "croch";
+			string stanceImage;
+			bool mirror;
+			if (hdstance_skinned) {
+				// SPEEN
+				if (hdstance_speen) {
+					speenCount++;
+					if (speenCount >= hdstance_speenrate) {
+						speenAngle += (speenAngle + 1 >= 9)? -7 : 1;
+						speenCount = 0;
+					}
+				}
 
+				string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+				string spriteName = ""..hdp.Sprite;
+				string frameChar = (hdstance_animate)? alphabet.Mid(hdp.Frame, 1) : (hdp.Incapacitated)? "N" : "E";
+				int spriteAngle = (hdstance_speen)? speenAngle : hdstance_angle;
+
+				// Check if image is valid
+				while (true) {
+					stanceImage = spriteName..frameChar..spriteAngle;
+					if (TexMan.GetName(TexMan.CheckForTexture(stanceImage))) break;
+
+					stanceImage = spriteName..frameChar..spriteAngle..frameChar..10 - spriteAngle;
+					if (TexMan.GetName(TexMan.CheckForTexture(stanceImage))) break;
+
+					stanceImage = spriteName..frameChar..10 - spriteAngle..frameChar..spriteAngle;
+					if (TexMan.GetName(TexMan.CheckForTexture(stanceImage))) {
+						mirror = true;
+						break;
+					}
+
+					stanceImage = spriteName..frameChar..0;
+					break;
+				}
+			} else {
+				int c = hdp.player.crouchfactor;
+				string suffix = (hdp.Incapacitated)? "incap" : (c > 0.5)? "stand" : "croch";
+				stanceImage = "hdp"..suffix;
+				Console.PrintF(stanceImage);
+			}
+
+			int iconFlags = StatusBar.DI_TRANSLATABLE;
+			if (mirror) iconFlags |= StatusBar.DI_MIRROR;
 			// Show stance
 			StatusBar.DrawImage(
-				"hdp"..n,
+				stanceImage,
 				(hdstance_posx, hdstance_posy),
-				s_flags,
+				s_flags | iconFlags,
 				hdstance_alpha, (-1, -1),
 				(hdstance_scalex, hdstance_scaley)
 			);

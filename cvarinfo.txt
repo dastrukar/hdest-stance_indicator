@@ -29,3 +29,11 @@ nosave int hdstance_boxoffsety=34;
 nosave float hdstance_boxalpha=0.375;
 
 nosave int hdstance_screenflags=241;
+
+// Thanks FDA.
+nosave bool hdstance_skinned=false;
+
+nosave int hdstance_angle=3;
+nosave bool hdstance_animate=false;
+nosave bool hdstance_speen=false;
+nosave int hdstance_speenrate=8;
