@@ -214,7 +214,7 @@ class HDStanceHandler : StaticEventHandler {
 					break;
 				}
 			} else {
-				int c = hdp.player.crouchfactor;
+				float c = hdp.player.crouchfactor;
 				string suffix = (hdp.Incapacitated)? "incap" : (c > 0.5)? "stand" : "croch";
 				stanceImage = "hdp"..suffix;
 			}
