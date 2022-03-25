@@ -196,7 +196,7 @@ class HDStanceHandler : StaticEventHandler {
 				string frameChar = (hdstance_animate)? alphabet.Mid(hdp.Frame, 1) : (hdp.Incapacitated)? "N" : "E";
 				int spriteAngle =
 					(hdstance_speen)? speenAngle :
-					(hdstance_useplayerangle)? ((hdp.Angle + 22.5 + 90) % 360 / 45) + 1 :
+					(hdstance_useplayerangle)? (360 - hdp.Angle - 22.5 - 45) % 360 / 45 + 1 :
 					hdstance_angle;
 
 				// Check if image is valid
