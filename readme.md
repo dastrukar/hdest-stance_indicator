@@ -73,6 +73,11 @@ Sets the player's stance angle to face.
 Valid values are 1-8.
 
 ### [bool]
+### hdstance_useplayerangle
+(REQUIRES hdstance_skinned TO BE TRUE)
+If true, the stance icon will use the player's angle.
+
+### [bool]
 ### hdstance_speen
 (REQUIRES hdstance_skinned TO BE TRUE)
 SPEEN

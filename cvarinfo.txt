@@ -37,3 +37,4 @@ nosave int hdstance_angle=3;
 nosave bool hdstance_animate=false;
 nosave bool hdstance_speen=false;
 nosave int hdstance_speenrate=8;
+nosave bool hdstance_useplayerangle=false;
