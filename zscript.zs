@@ -217,7 +217,6 @@ class HDStanceHandler : StaticEventHandler {
 				int c = hdp.player.crouchfactor;
 				string suffix = (hdp.Incapacitated)? "incap" : (c > 0.5)? "stand" : "croch";
 				stanceImage = "hdp"..suffix;
-				Console.PrintF(stanceImage);
 			}
 
 			int iconFlags = StatusBar.DI_TRANSLATABLE;
