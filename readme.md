@@ -77,6 +77,10 @@ Valid values are 1-8.
 (REQUIRES hdstance_skinned TO BE TRUE)
 If true, the stance icon will use the player's angle.
 
+### hdstance_compass
+(REQUIRES hdstance_useplayerangle TO BE TRUE)
+If true, will use old rotation calculations.
+
 ### [bool]
 ### hdstance_speen
 (REQUIRES hdstance_skinned TO BE TRUE)
