@@ -62,6 +62,12 @@ Determines the size of the shadow box.
 If true, the stance icon will use the player's skin.
 
 ### [bool]
+### hdstance_skinstencil
+(REQUIRES hdstance_skinned TO BE TRUE)
+If true, the stance icon will be rendered with a single colour.
+(similar to how the default stance icon is shown)
+
+### [bool]
 ### hdstance_animate
 (REQUIRES hdstance_skinned TO BE TRUE)
 If true, the stance icon will follow the player's actions.

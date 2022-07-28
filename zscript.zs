@@ -224,13 +224,16 @@ class HDStanceHandler : StaticEventHandler {
 
 			int iconFlags = StatusBar.DI_TRANSLATABLE;
 			if (mirror) iconFlags |= StatusBar.DI_MIRROR;
+
+			int drawStyle = (hdstance_skinned && hdstance_skinstencil)? STYLE_AddStencil : STYLE_Translucent;
 			// Show stance
 			StatusBar.DrawImage(
 				stanceImage,
 				(hdstance_posx, hdstance_posy),
 				s_flags | iconFlags,
 				hdstance_alpha, (-1, -1),
-				(hdstance_scalex, hdstance_scaley)
+				(hdstance_scalex, hdstance_scaley),
+				drawStyle
 			);
 
 			// Show speed indicator
