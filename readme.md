@@ -34,6 +34,16 @@ Determines the alpha transparency of
 the stance and speed indicator.
 
 ### [bool]
+### hdstance_usestencil
+If true, the stance icon will be rendered with a single colour.
+(similar to how the default stance icon is shown)
+
+### [bool]
+### hdstance_useplayercol
+(REQUIRES hdstance_usestencil TO BE TRUE)
+If true, the stance icon will use the player's colour.
+
+### [bool]
 ### hdstance_showspeed
 If true, will display a speed indicator
 below the stance indicator.
@@ -60,12 +70,6 @@ Determines the size of the shadow box.
 ### [bool]
 ### hdstance_skinned
 If true, the stance icon will use the player's skin.
-
-### [bool]
-### hdstance_skinstencil
-(REQUIRES hdstance_skinned TO BE TRUE)
-If true, the stance icon will be rendered with a single colour.
-(similar to how the default stance icon is shown)
 
 ### [bool]
 ### hdstance_animate

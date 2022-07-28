@@ -225,7 +225,13 @@ class HDStanceHandler : StaticEventHandler {
 			int iconFlags = StatusBar.DI_TRANSLATABLE;
 			if (mirror) iconFlags |= StatusBar.DI_MIRROR;
 
-			int drawStyle = (hdstance_skinned && hdstance_skinstencil)? STYLE_AddStencil : STYLE_Translucent;
+			int drawStyle = (hdstance_skinned && hdstance_usestencil)? STYLE_AddStencil : STYLE_Translucent;
+			Color col = 0xffffffff;
+			if (hdstance_usestencil && hdstance_useplayercol)
+			{
+				Color playerCol = Players[consoleplayer].GetColor();
+				col = Color(255, playerCol.r, playerCol.g, playerCol.b);
+			}
 			// Show stance
 			StatusBar.DrawImage(
 				stanceImage,
@@ -233,7 +239,8 @@ class HDStanceHandler : StaticEventHandler {
 				s_flags | iconFlags,
 				hdstance_alpha, (-1, -1),
 				(hdstance_scalex, hdstance_scaley),
-				drawStyle
+				drawStyle,
+				col
 			);
 
 			// Show speed indicator
