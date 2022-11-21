@@ -1,7 +1,7 @@
 # HDest Stance Indicator
 A simple clientside addon for HDest that adds a "stance indicator" *(like the one you'd see in ARMA)*.
 
-Thanks to PhysixCat for the idea, and FDA for making the player skin edit of Stance Indicator.
+Thanks to PhysixCat for the idea, FDA for making the player skin edit of Stance Indicator, and prettyFist for the strip indicator idea.
 
 ![](https://cdn.discordapp.com/attachments/713246305392001055/856878292706525204/unknown.png)
 
@@ -52,6 +52,21 @@ below the stance indicator.
 ### hdstance_showbraced
 If true, will display a braced indicator
 below the stance indicator.
+
+### [bool]
+### hdstance_showstrip
+If true, will display an indicator
+that shows the StripTime.
+
+### [bool]
+### hdstance_stripusetic
+If true, strip indicator will use Tics
+instead of converting it to seconds.
+
+### [bool]
+### hdstance_stripalwaysshow
+If true, strip indicator will always be visible
+when the time is 0.
 
 ### [bool]
 ### hdstance_drawshadowbox
@@ -122,6 +137,12 @@ the braced indicator.
 (ignored if hdstance_auto is true)
 
 ### [int]
+### hdstance_stripoffsetx, hdstance_stripoffsety 
+Determines the offset of
+the strip indicator.
+(ignored if hdstance_auto is true)
+
+### [int]
 ### hdstance_boxoffsetx, hdstance_boxoffsety
 Determines the offset of the shadow box.
 
@@ -166,7 +187,7 @@ Syntax: XYZ
 ```
 
 ### [int]
-### hdstance_speedtextalign, hdstance_bracedtextalign
+### hdstance_speedtextalign, hdstance_bracedtextalign, hdstance_striptextalign
 Determines how the text will be aligned.
 
 Syntax: XY

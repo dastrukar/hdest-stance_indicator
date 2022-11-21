@@ -291,6 +291,21 @@ class HDStanceHandler : StaticEventHandler {
 
 				DrawIndicator(s, offset, v_mode, hdstance_bracedtextrepeat, s_flags | b_flags);
 			}
+
+			// Show the player's StripTime
+			if (hdstance_showstrip) {
+				int st_flags;
+				bool v_mode;
+				[st_flags, v_mode] = GetTextFlags(hdstance_striptextalign);
+
+				float time = (hdstance_stripusetic)? hdp.StripTime : float(hdp.StripTime) / 35;
+				if (!hdstance_stripalwaysshow && time == 0)
+					return;
+				string s = String.Format((hdstance_stripusetic)? "%d" : "%.2f", time);
+
+				offset = (hdstance_stripoffsetx * hdstance_scalex, hdstance_stripoffsety * hdstance_scaley);
+				DrawIndicator(s, offset, v_mode, 1, s_flags | st_flags);
+			}
 		}
 	}
 }

@@ -20,12 +20,19 @@ nosave bool hdstance_showbraced=true;
 nosave string hdstance_bracedtext="=";
 nosave int hdstance_bracedtextrepeat=3;
 nosave int hdstance_bracedoffsetx=0;
-nosave int hdstance_bracedoffsety=6;
+nosave int hdstance_bracedoffsety=16;
 nosave int hdstance_bracedtextalign=12;
+
+nosave bool hdstance_showstrip=true;
+nosave bool hdstance_stripusetic=false;
+nosave bool hdstance_stripalwaysshow=false;
+nosave int hdstance_stripoffsetx=0;
+nosave int hdstance_stripoffsety=-70;
+nosave int hdstance_striptextalign=12;
 
 nosave bool hdstance_drawshadowbox=true;
 nosave int hdstance_boxsizex=70;
-nosave int hdstance_boxsizey=100;
+nosave int hdstance_boxsizey=106;
 nosave int hdstance_boxoffsetx=1;
 nosave int hdstance_boxoffsety=34;
 nosave float hdstance_boxalpha=0.375;
