@@ -252,11 +252,7 @@ class HDStanceHandler : StaticEventHandler {
 				let run = CVar.GetCVar("cl_run", StatusBar.CPlayer).GetBool();
 				let arr = hdstance_speedtext;
 
-				if (hdstance_auto) {
-					offset = (0, 0);
-				} else {
-					offset = (hdstance_speedoffsetx * hdstance_scalex, hdstance_speedoffsety * hdstance_scaley);
-				}
+				offset = (hdstance_speedoffsetx * hdstance_scalex, hdstance_speedoffsety * hdstance_scaley);
 
 				int r;
 				if (hdp.runwalksprint > 0) {
@@ -278,17 +274,7 @@ class HDStanceHandler : StaticEventHandler {
 
 				string s = (hdp.gunbraced)? hdstance_bracedtext : "";
 
-				if (hdstance_auto) {
-					int tmp_y = 0;
-					if (hdstance_showspeed) {
-						tmp_y = NewSmallFont.GetHeight() * hdstance_scaley;
-					}
-
-					offset = (0, tmp_y);
-				} else {
-					offset = (hdstance_bracedoffsetx * hdstance_scalex, hdstance_bracedoffsety * hdstance_scaley);
-				}
-
+				offset = (hdstance_bracedoffsetx * hdstance_scalex, hdstance_bracedoffsety * hdstance_scaley);
 				DrawIndicator(s, offset, v_mode, hdstance_bracedtextrepeat, s_flags | b_flags);
 			}
 

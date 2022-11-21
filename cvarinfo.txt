@@ -1,5 +1,3 @@
-nosave bool hdstance_auto=true;
-
 nosave int hdstance_posx=75;
 nosave int hdstance_posy=-12;
 
