@@ -155,11 +155,12 @@ class HDStanceHandler : StaticEventHandler {
 	ui bool CheckShowHUD()
 	{
 		return (
-			(
+			!HHFunc
+			|| !hdstance_enablehhelmetcompat
+			|| (
 				StatusBar.CPlayer.mo
 				&& HHFunc.GetIntUI("GetShowHUD", objectArg: StatusBar.CPlayer.mo)
 			)
-			|| !hdstance_enablehhelmetcompat
 		);
 	}
 
