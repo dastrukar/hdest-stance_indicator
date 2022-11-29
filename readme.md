@@ -14,9 +14,7 @@ the readme.md provided with this addon.
 
 So you can read that instead if you want.
 
-## ====CVars====
-
-## RENDERING
+## General CVars
 
 ### [int]
 ### hdstance_scalex, hdstance_scaley
@@ -26,7 +24,11 @@ the indicators enabled and the box shadow.
 ### [float]
 ### hdstance_alpha
 Determines the alpha transparency of
-the stance and speed indicator.
+the all indicators.
+
+### [int]
+### hdstance_posx, hdstance_posx
+Determines the position of the stance indicator.
 
 ### [bool]
 ### hdstance_usestencil
@@ -38,20 +40,57 @@ If true, the stance icon will be rendered with a single colour.
 (REQUIRES hdstance_usestencil TO BE TRUE)
 If true, the stance icon will use the player's colour.
 
+
+## Speed Indicator CVars
+
 ### [bool]
 ### hdstance_showspeed
 If true, will display an indicator
 that shows whether you're walking, jogging, or running.
+
+### [int]
+### hdstance_speedoffsetx, hdstance_speedoffsety
+Determines the offset of
+the speed indicator.
+
+### [string]
+### hdstance_speedtext
+The string used for indicating the speed.
+
+
+## Brace Indicator CVars
 
 ### [bool]
 ### hdstance_showbraced
 If true, will display an indicator
 that shows if your weapon is braced.
 
+### [int]
+### hdstance_bracedoffsetx, hdstance_bracedoffsety 
+Determines the offset of
+the braced indicator.
+
+### [string]
+### hdstance_bracedtext
+The string used for indicating if the weapon is braced.
+
+### [int]
+### hdstance_bracedtextrepeat
+Determines how much hdstance_bracedtext
+will be repeated when displayed.
+
+
+## Strip Indicator CVars
+
 ### [bool]
 ### hdstance_showstrip
 If true, will display an indicator
 that shows the StripTime.
+
+### [int]
+### hdstance_stripoffsetx, hdstance_stripoffsety 
+Determines the offset of
+the strip indicator.
 
 ### [bool]
 ### hdstance_stripusetic
@@ -63,10 +102,17 @@ instead of converting it to seconds.
 If true, strip indicator will always be visible
 when the time is 0.
 
+
+## Shadow Box CVars
+
 ### [bool]
 ### hdstance_drawshadowbox
 If true, will display a shadow box
 behind the stance indicator.
+
+### [int]
+### hdstance_boxoffsetx, hdstance_boxoffsety
+Determines the offset of the shadow box.
 
 ### [float]
 ### hdstance_boxalpha
@@ -76,6 +122,9 @@ the shadow box.
 ### [int]
 ### hdstance_boxsizex, hdstance_boxsizey
 Determines the size of the shadow box.
+
+
+## Skinned CVars
 
 ### [bool]
 ### hdstance_skinned
@@ -113,49 +162,7 @@ Determines how fast the player's stance will speen.
 (the lower the value, the faster it'll speen)
 
 
-## POSITIONING
-
-### [int]
-### hdstance_posx, hdstance_posx
-Determines the position of the stance indicator.
-
-### [int]
-### hdstance_speedoffsetx, hdstance_speedoffsety
-Determines the offset of
-the speed indicator.
-
-### [int]
-### hdstance_bracedoffsetx, hdstance_bracedoffsety 
-Determines the offset of
-the braced indicator.
-
-### [int]
-### hdstance_stripoffsetx, hdstance_stripoffsety 
-Determines the offset of
-the strip indicator.
-
-### [int]
-### hdstance_boxoffsetx, hdstance_boxoffsety
-Determines the offset of the shadow box.
-
-
-## INDICATOR TEXT
-
-### [string]
-### hdstance_speedtext
-The string used for indicating the speed.
-
-### [string]
-### hdstance_bracedtext
-The string used for indicating if the weapon is braced.
-
-### [int]
-### hdstance_bracedtextrepeat
-Determines how much hdstance_bracedtext
-will be repeated when displayed.
-
-
-## FLAGS
+## Flag CVars
 
 ### [int]
 ### hdstance_screenflags
@@ -199,7 +206,7 @@ Syntax: XY
 ```
 
 
-## COMPAT
+## Compatibility CVars
 
 ### [bool]
 ### hdstance_enablehhelmetcompat
