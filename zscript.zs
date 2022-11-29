@@ -5,6 +5,7 @@ class HDStanceHandler : StaticEventHandler {
 	ui HUDFont mfont;
 	ui int speenAngle;
 	ui int speenCount;
+	Service HHFunc;
 
 	ui bool CompareLastDigit(int num, int expected) {
 		return ((num % 10) == expected);
@@ -144,8 +145,26 @@ class HDStanceHandler : StaticEventHandler {
 		}
 	}
 
+	override void WorldTick()
+	{
+		if (!HHFunc)
+			HHFunc = ServiceIterator.Find("HHFunc").Next();
+	}
+
+	// Hideous Helmet support
+	ui bool CheckShowHUD()
+	{
+		return (
+			(
+				StatusBar.CPlayer.mo
+				&& HHFunc.GetIntUI("GetShowHUD", objectArg: StatusBar.CPlayer.mo)
+			)
+			|| !hdstance_enablehhelmetcompat
+		);
+	}
+
 	override void RenderUnderlay(RenderEvent e) {
-		if (AutomapActive || GameState != GS_LEVEL) {
+		if (AutomapActive || GameState != GS_LEVEL || !CheckShowHUD()) {
 			return;
 		}
 
@@ -167,7 +186,7 @@ class HDStanceHandler : StaticEventHandler {
 	}
 
 	override void RenderOverlay(RenderEvent e) {
-		if (AutomapActive || GameState != GS_LEVEL) {
+		if (AutomapActive || GameState != GS_LEVEL || !CheckShowHUD()) {
 			return;
 		}
 

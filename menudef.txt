@@ -185,6 +185,14 @@ OptionMenu "HDSINFO" {
 	StaticText "1: TOP", "white"
 	StaticText "2: CENTER", "white"
 	StaticText "3: BOTTOM", "white"
+	StaticText " ", "white"
+	StaticText "= COMPAT =", "cyan"
+	StaticText " ", "white"
+	StaticText "[bool]", "gold"
+	StaticText "hdstance_enablehhelmetcompat", "gold"
+	StaticText "(Requires Hideous Helmet)", "white"
+	StaticText "If enabled, will hide the stance indicator", "white"
+	StaticText "when the player isn't wearing a helmet.", "white"
 }
 
 AddOptionMenu "OptionsMenu" {

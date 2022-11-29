@@ -8,12 +8,17 @@ nosave bool hdstance_useplayercol=false;
 nosave float hdstance_scalex=0.35;
 nosave float hdstance_scaley=0.35;
 
+// HHelmet Compat
+nosave bool hdstance_enablehhelmetcompat=true;
+
+// Speed indicator
 nosave bool hdstance_showspeed=true;
 nosave string hdstance_speedtext="<";
 nosave int hdstance_speedoffsetx=0;
 nosave int hdstance_speedoffsety=0;
 nosave int hdstance_speedtextalign=12;
 
+// Brace indicator
 nosave bool hdstance_showbraced=true;
 nosave string hdstance_bracedtext="=";
 nosave int hdstance_bracedtextrepeat=3;
@@ -21,6 +26,7 @@ nosave int hdstance_bracedoffsetx=0;
 nosave int hdstance_bracedoffsety=16;
 nosave int hdstance_bracedtextalign=12;
 
+// Strip indicator
 nosave bool hdstance_showstrip=true;
 nosave bool hdstance_stripusetic=false;
 nosave bool hdstance_stripalwaysshow=false;
@@ -37,7 +43,7 @@ nosave float hdstance_boxalpha=0.375;
 
 nosave int hdstance_screenflags=241;
 
-// Thanks FDA.
+// Skinned mode (Thanks FDA.)
 nosave bool hdstance_skinned=false;
 
 nosave int hdstance_angle=3;

@@ -197,3 +197,12 @@ Syntax: XY
 2: CENTER
 3: BOTTOM
 ```
+
+
+## COMPAT
+
+### [bool]
+### hdstance_enablehhelmetcompat
+(Requires Hideous Helmet)
+If enabled, will hide the stance indicator
+when the player isn't wearing a helmet.
